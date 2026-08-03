@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
+.prose pre ::selection {
+  background-color: #4f46e5 !important; /* 经典靛蓝色 */
+  color: #ffffff !important;
+}
+
+/* 2. 为代码块加上悬浮的“复制”按钮 */
+.prose pre {
+  position: relative;
+  padding-top: 2.8rem !important; /* 顶端留出放按钮的空间 */
+}
+
+/* 自动用 CSS 加上纯前端复制交互（或保持干净的代码顶栏） */
+.prose pre::before {
+  content: "CODE";
+  position: absolute;
+  top: 0.75rem;
+  left: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
