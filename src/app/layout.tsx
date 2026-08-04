@@ -5,6 +5,9 @@ import "./globals.css";
 export const metadata = {
   title: "灰",
   description: "欢迎来到我的独立空间",
+  icons: {
+    icon: "/logo.jpg",
+  },
 };
 
 export default function RootLayout({

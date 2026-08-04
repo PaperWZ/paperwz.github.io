@@ -3,14 +3,9 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    // 1. 最外层容器：min-h 控制整体垂直高度，flex 配合 items-center 让整个大盒子在页面纵向也居中
+
     <div className="min-h-[calc(100vh-18rem)] flex items-center justify-center animate-fade-in-up">
       
-      {/* 2. 自我介绍大盒子：
-          - mx-auto: 水平居中
-          - flex-col-reverse sm:flex-row: 移动端上下排列（文字在下头像在上），PC端左右排列
-          - items-center justify-between: 左右垂直居中并拉开两端间距
-      */}
       <div className="w-full max-w-4xl mx-auto flex flex-col-reverse sm:flex-row items-center justify-between gap-8 py-8">
         
         {/* 左侧：文字介绍内容区域 */}
@@ -39,17 +34,49 @@ export default function HomePage() {
               了解 Yuuri
             </Link>
           </div>
+          <div className="flex items-center justify-center sm:justify-start space-x-4">
+            <Link
+              href="https://space.bilibili.com/88072458"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 px-2.5 py-2.5 bg-white border border-slate-200 text-slate-700 font-medium text-sm rounded-lg hover:bg-slate-50 transition-all select-none"
+            >
+              <Image
+              src="/bilibili.svg"
+              alt="个人头像"
+              width={10}
+              height={10}
+              draggable={false}
+              className="w-full h-full object-cover shadow-xl shadow-slate-200 hover:shadow-xl hover:shadow-indigo-100 transition-shadow"
+            />
+            </Link>
+            <Link
+              href="https://github.com/PaperWZ"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 px-2.5 py-2.5 bg-white border border-slate-200 text-slate-700 font-medium text-sm rounded-lg hover:bg-slate-50 transition-all select-none"
+            >
+              <Image
+              src="/github.svg"
+              alt="个人头像"
+              width={10}
+              height={10}
+              draggable={false}
+              className="w-full h-full object-cover shadow-xl shadow-slate-200 hover:shadow-xl hover:shadow-indigo-100 transition-shadow"
+            />
+            </Link>
+          </div>
         </div>
 
-        {/* 右侧：极简头像（加了悬浮放大与禁止选中效果） */}
         <div className="shrink-0">
           <div className="relative w-35 h-35 sm:w-60 sm:h-60 transition-all duration-300 hover:-translate-y-1 hover:scale-105 select-none">
             <Image
-              src="/1.jpg"
+              src="/head.jpg"
               alt="个人头像"
               width={144}
               height={144}
-              draggable={false} // 禁止鼠标拖拽图片
+              priority
+              draggable={false}
               className="w-full h-full rounded-full object-cover shadow-xl shadow-slate-200 hover:shadow-xl hover:shadow-indigo-100 transition-shadow"
             />
           </div>

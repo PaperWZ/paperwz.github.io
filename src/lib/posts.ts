@@ -2,7 +2,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
-import html from "remark-html";
+import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeExternalLinks from "rehype-external-links";
+import rehypeStringify from "rehype-stringify";
 
 const postsDirectory = path.join(process.cwd(), "content");
 
@@ -56,11 +59,17 @@ export async function getPostData(slug: string): Promise<PostData> {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
 
-  // 使用 remark 把 Markdown 转换成 HTML 字符串（解决 ### 和 **粗体** 不显示的问题）
+  // 转换链：Markdown 语法 -> GFM扩展 -> 转为HTML语法树 -> 给外链加 target="_blank" -> 输出HTML字符串
   const processedContent = await remark()
-    .use(html)
+    .use(remarkGfm) // 支持删除线 ~~、表格、任务列表等 GFM 语法
+    .use(remarkRehype) // 将 Remark 树转为 Rehype HTML 树
+    .use(rehypeExternalLinks, {
+      target: "_blank", // 自动给所有外部链接添加新窗口打开
+      rel: ["noopener", "noreferrer"], // 自动添加安全与隐私保护属性
+    })
+    .use(rehypeStringify) // 导出为最终的 HTML 字符串
     .process(matterResult.content);
-    
+
   const contentHtml = processedContent.toString();
 
   return {

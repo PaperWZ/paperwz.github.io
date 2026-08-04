@@ -85,7 +85,7 @@ export default async function BlogPostPage({
             文章标题：<strong className="text-slate-900">{post.title}</strong>
           </p>
           <p className="mt-1 leading-relaxed">
-            本文采用 {" "}
+            本文采用{" "} 
             <a
               href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"
               target="_blank"
@@ -94,10 +94,10 @@ export default async function BlogPostPage({
             >
               CC BY-NC-SA 4.0 许可协议
             </a>
-            进行许可 xwx
+            进行许可 (～￣▽￣)～
           </p>
           <p className="mt-1 text-xs text-slate-400">
-            转载恳请保留原文出处及作者信息
+            转载请保留原文出处及作者信息
           </p>
         </div>
       </div>
