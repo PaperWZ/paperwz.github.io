@@ -1,45 +1,19 @@
 ---
-title: "这也是篇测试文章"
-date: "2026-07-22"
+title: "NEW CONTENT"
+date: "2025-22-33"
 tag: "测试"
-excerpt: "好像没啥可写的"
+excerpt: "但是这里可没有bucket"
 ---
 
-嗯，这是一个内容
+如果更新了什么东西应该会在这里写一写w  
+不过更多会像一个todo list
 
-### 总之测试一下吧
+比较需要的：  
+~~文章界面添加封面图~~  
+适配暗色模式与调节按钮（对...暗色模式下的网页很奇怪）  
 
-**粗体**：我喜欢你
-
-### 我将要尝试写很多东西
-
-在我的房间里  
-爆发出五彩缤纷的光  
-这是那太阳  
-折射而四散的芬芳  
-在那阳光  
-照射下  
-我的心情似乎也在变得光明  
-自然光治愈的人的  
-神奇  
-我貌似感受到少许  
-真是美好的  
-幻想啊   
-
-一段测试文本
-
-
-下面这段是从runoob里直接拷过来的，只是用于测试
-```sql
-SELECT u.name, u.email, COUNT(o.id) as order_count
-FROM users u
-LEFT JOIN orders o ON u.id = o.user_id
-WHERE u.created_at >= '2024-01-01'
-GROUP BY u.id, u.name, u.email
-ORDER BY order_count DESC
-LIMIT 10;
-```
-
-哇 `printf()` 很有用
-
-这是一个链接 [百度](https://www.baidu.com)
+感觉不太需要的：  
+搜索栏  
+加一堆花里胡哨的特效  
+更好好的介绍自己  
+给文章添加评论区？  

@@ -9,13 +9,11 @@ export default function AboutPage() {
         <h2 className="text-xl font-semibold text-slate-800 pt-2">做好吃的要用到的</h2>
         <ul className="list-disc list-inside space-y-1 text-sm text-slate-600">
           <li>前端：React / Next.js / Tailwind CSS</li>
-          <li>后端？好像被吃掉了，其实我没打算做后端，先用静态网页试试吧</li>
         </ul>
         <h2 className="text-xl font-semibold text-slate-800 pt-2">跟网页风格无关的一些注释</h2>
         <p>
           又是一个心血来潮，不知道这几分热度能维持多久，不过我想尽量把这个地方改的舒服一点。<br />
-          我去这个关于页好像要我手敲HTML 还好我学了一点点:P <br />
-          不过总之感谢你的来访，这个博客可能会改的比较慢，请晚点再来看吧
+          总之感谢你的来访，这个博客可能会改的比较慢，请晚点再来看吧w
         </p>
       </div>
     </div>

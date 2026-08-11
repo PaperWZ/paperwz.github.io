@@ -16,6 +16,7 @@ export interface PostData {
   tag: string;
   excerpt: string;
   contentHtml?: string;
+  coverbg?: string;
 }
 
 // 1. 获取所有文章列表（用于 /blog 页面）
@@ -40,7 +41,7 @@ export function getSortedPostsData(): PostData[] {
 
       return {
         slug,
-        ...(matterResult.data as { title: string; date: string; tag: string; excerpt: string }),
+        ...(matterResult.data as { title: string; date: string; tag: string; excerpt: string; coverbg?: string }),
       };
     });
 
@@ -75,6 +76,6 @@ export async function getPostData(slug: string): Promise<PostData> {
   return {
     slug,
     contentHtml,
-    ...(matterResult.data as { title: string; date: string; tag: string; excerpt: string }),
+    ...(matterResult.data as { title: string; date: string; tag: string; excerpt: string ; coverbg?: string }),
   };
 }
