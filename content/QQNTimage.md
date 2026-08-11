@@ -2,6 +2,7 @@
 title: "QQNT 表情商城(marketface) 表情包的保存/存储解码 小记"
 date: "2025-04-13"
 tag: "小记"
+coverbg: "/blog/QQNTimage/QQNT-bg.webp"
 excerpt: "记录了想保存qq表情包的过程的折腾老文章"
 ---
 
