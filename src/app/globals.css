@@ -1,9 +1,11 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -13,17 +15,54 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  color-scheme: dark;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes themeReveal {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.theme-transition-overlay {
+  position: fixed;
+  z-index: 1;
+  top: var(--theme-y);
+  left: var(--theme-x);
+  width: 200vmax;
+  height: 200vmax;
+  border-radius: 50%;
+  background: var(--theme-color);
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  animation: themeReveal 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform;
+}
+
+.theme-transition-backdrop {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  background: var(--theme-backdrop-color);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-transition-overlay {
+    animation-duration: 1ms;
+  }
 }
 
 @keyframes fadeInUp {

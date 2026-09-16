@@ -12,10 +12,10 @@ export default function HomePage() {
         <div className="flex-1 space-y-6 text-center sm:text-left">
           {/* 问候与介绍 */}
           <div className="space-y-3">
-            <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight sm:text-5xl">
+            <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight sm:text-5xl dark:text-slate-100">
               这里是 <span className="text-yellow-400">Yuuri</span>
             </h1>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
+            <p className="text-lg text-slate-600 leading-relaxed max-w-xl dark:text-slate-400">
               我也不知道为什么在这里，因为偷吃了 Chito 的东西被扔到这里来了。
             </p>
           </div>
@@ -23,13 +23,13 @@ export default function HomePage() {
           <div className="pt-2 flex items-center justify-center sm:justify-start space-x-4">
             <Link
               href="/blog"
-              className="px-5 py-2.5 bg-slate-900 text-white font-medium text-sm rounded-lg hover:bg-slate-800 transition-all shadow-md shadow-slate-200 select-none"
+              className="px-5 py-2.5 bg-slate-900 text-white font-medium text-sm rounded-lg hover:bg-slate-800 transition-all shadow-md shadow-slate-200 select-none dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white dark:shadow-slate-950"
             >
               看看美食 &rarr;
             </Link>
             <Link
               href="/about"
-              className="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 font-medium text-sm rounded-lg hover:bg-slate-50 transition-all select-none"
+              className="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 font-medium text-sm rounded-lg hover:bg-slate-50 transition-all select-none dark:bg-slate-900 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
             >
               了解 Yuuri
             </Link>
@@ -47,7 +47,7 @@ export default function HomePage() {
               width={10}
               height={10}
               draggable={false}
-              className="w-full h-full object-cover shadow-xl shadow-slate-200 hover:shadow-xl hover:shadow-indigo-100 transition-shadow"
+              className="w-full h-full object-cover shadow-xl shadow-slate-200 hover:shadow-xl hover:shadow-indigo-100 transition-shadow dark:shadow-black/40 dark:hover:shadow-indigo-950"
             />
             </Link>
             <Link
@@ -62,7 +62,7 @@ export default function HomePage() {
               width={10}
               height={10}
               draggable={false}
-              className="w-full h-full object-cover shadow-xl shadow-slate-200 hover:shadow-xl hover:shadow-indigo-100 transition-shadow"
+              className="w-full h-full object-cover shadow-xl shadow-slate-200 hover:shadow-xl hover:shadow-indigo-100 transition-shadow dark:shadow-black/40 dark:hover:shadow-indigo-950"
             />
             </Link>
           </div>
@@ -77,7 +77,7 @@ export default function HomePage() {
               height={144}
               priority
               draggable={false}
-              className="w-full h-full rounded-full object-cover shadow-xl shadow-slate-200 hover:shadow-xl hover:shadow-indigo-100 transition-shadow"
+              className="w-full h-full rounded-full object-cover shadow-xl shadow-slate-200 hover:shadow-xl hover:shadow-indigo-100 transition-shadow dark:shadow-black/40 dark:hover:shadow-indigo-950"
             />
           </div>
         </div>

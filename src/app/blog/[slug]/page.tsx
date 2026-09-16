@@ -49,18 +49,17 @@ export default async function BlogPostPage({
     <article className="max-w-none">
       <CodeCopy />
       {/* 文章头部信息 */}
-      <header className="border-b border-slate-100 pb-6 mb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+      <header className="border-b border-slate-100 pb-6 mb-8 dark:border-slate-800">
+        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight dark:text-slate-100">
           {post.title}
         </h1>
-        <div className="mt-4 flex flex-wrap items-center gap-y-2 text-sm text-slate-500">
+        <div className="mt-4 flex flex-wrap items-center gap-y-2 text-sm text-slate-500 dark:text-slate-400">
           <span>{post.date}</span>
           <span className="mx-2">·</span>
-          <span className="inline-block rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">
+          <span className="inline-block rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
             {post.tag}
           </span>
           <span className="mx-2">·</span>
-          {/* 阅读时间估算提示 */}
           <span className="flex items-center text-slate-500">
           阅读需要大约 {readingTime} 分钟
           </span>
@@ -69,34 +68,34 @@ export default async function BlogPostPage({
 
       {/* 文章正文与自定义样式修复（修复选中颜色 & 改善代码块样式） */}
       <div
-        className="prose prose-slate max-w-none leading-8 text-slate-700
+        className="prose prose-slate max-w-none leading-8 text-slate-700 dark:prose-invert dark:text-slate-300
           selection:bg-indigo-500 selection:text-white
           prose-pre:relative prose-pre:bg-slate-900 prose-pre:text-slate-100 prose-pre:rounded-xl prose-pre:shadow-sm"
         dangerouslySetInnerHTML={{ __html: post.contentHtml ?? "" }}
       />
 
       {/* 底部分隔线 & 开源许可协议卡片 */}
-      <div className="mt-16 pt-8 border-t border-slate-200">
-        <div className="rounded-xl border border-slate-200/80 bg-slate-50/60 p-5 text-sm text-slate-600 shadow-sm">
-          <div className="flex items-center gap-2 text-base font-semibold text-slate-800 mb-2">
+      <div className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800">
+        <div className="rounded-xl border border-slate-200/80 bg-slate-50/60 p-5 text-sm text-slate-600 shadow-sm dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400">
+          <div className="flex items-center gap-2 text-base font-semibold text-slate-800 mb-2 dark:text-slate-200">
             <span>许可协议</span>
           </div>
           <p className="leading-relaxed">
-            文章标题：<strong className="text-slate-900">{post.title}</strong>
+            文章标题：<strong className="text-slate-900 dark:text-slate-100">{post.title}</strong>
           </p>
           <p className="mt-1 leading-relaxed">
-            本文采用{" "} 
+            本文采用{" "}
             <a
               href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-indigo-600 underline underline-offset-4 hover:text-indigo-700"
+              className="font-medium text-indigo-600 underline underline-offset-4 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
             >
               CC BY-NC-SA 4.0 许可协议
             </a>
             进行许可 (～￣▽￣)～
           </p>
-          <p className="mt-1 text-xs text-slate-400">
+          <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
             转载请保留原文出处及作者信息
           </p>
         </div>
